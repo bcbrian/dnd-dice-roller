@@ -22,16 +22,35 @@
   DnD Dice Roller
 </div>
 <div>
-  <input class="action" />
+  <input id="dice-input" class="action" />
 </div>
 <div>
-  <button class="action" onclick="logger('I was clicked!')">
+  <button class="action" onclick="rollTheDice()">
     Roll the Dice
   </button>
 </div>
 
 <!-- JavaScript Functionality -->
 <script>
+  /**
+   * App
+   */
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  function diceRoll(numberOfSides) {
+    return getRandomInt(numberOfSides) + 1;
+  }
+
+  function rollTheDice() {
+    let inputEl = document.getElementById("dice-input");
+    let userInput = inputEl.value;
+    console.log(diceRoll(userInput));
+  }
+
+  /**
+   * Learnings
+   */
   function logger(str) {
     // str = "Hi, I am javascript!"
     console.log(str);
@@ -66,5 +85,8 @@
     }
   };
   logger(car);
+  logger(car.make);
+  logger(car.model);
+  logger(car.year);
   car.honk();
 </script>
