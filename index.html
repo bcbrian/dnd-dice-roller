@@ -39,13 +39,27 @@
     return Math.floor(Math.random() * Math.floor(max));
   }
   function diceRoll(numberOfSides) {
-    return getRandomInt(numberOfSides) + 1;
+    if (isNaN(parseInt(numberOfSides))) {
+      return "Not a valid dice roll";
+    } else {
+      return getRandomInt(numberOfSides) + 1;
+    }
   }
 
   function rollTheDice() {
     let inputEl = document.getElementById("dice-input");
-    let userInput = inputEl.value;
-    console.log(diceRoll(userInput));
+    let userInput = inputEl.value.toLowerCase();
+    // split -> 2d6 -> [2, 6]
+    let numberOfRolls = parseInt(userInput.split("d")[0]);
+    // split -> 2d6 -> [2, 6]
+    let numberOfDiceSides = userInput.split("d")[1];
+
+    let results = [];
+    while (numberOfRolls > 0) {
+      results.push(diceRoll(numberOfDiceSides));
+      numberOfRolls--;
+    }
+    console.log(results);
   }
 
   /**
@@ -71,6 +85,9 @@
   // Array --- List
   let animals = ["alligator", "bat", "cat"];
   logger(animals);
+  logger(animals[0]);
+  logger(animals[1]);
+  logger(animals[2]);
 
   // Object --- everything is an object
   let car = {
