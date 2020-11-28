@@ -1,23 +1,41 @@
+<!-- CSS Styles -->
 <style>
   div {
     background-color: rebeccapurple;
     color: white;
     padding: 12px;
+    font-size: 40px;
   }
-  input {
-  }
-  button {
+
+  .action {
+    background-color: rebeccapurple;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
   }
 </style>
 
-<div>
+<!-- HTML Structure -->
+<div class="title">
   DnD Dice Roller
 </div>
-<input />
-<button>
-  Roll the Dice
-</button>
+<div>
+  <input class="action" />
+</div>
+<div>
+  <button class="action" onclick="logger('I was clicked!')">
+    Roll the Dice
+  </button>
+</div>
 
+<!-- JavaScript Functionality -->
 <script>
-  console.log("Hi i am javascript!");
+  function logger(str) {
+    // str = "Hi, I am javascript!"
+    console.log(str);
+  }
+
+  logger("Hi, I am all the javascript!");
 </script>
