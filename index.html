@@ -37,5 +37,34 @@
     console.log(str);
   }
 
-  logger("Hi, I am all the javascript!");
+  // String
+  let helloString = "Hi, I am all the javascript!";
+  logger(helloString);
+
+  // Numbers
+  let numberThree = 3;
+  logger(numberThree);
+
+  // Boolean --- Bool not Bull
+  let isLightOn = true; // false
+  logger(isLightOn);
+
+  // Array --- List
+  let animals = ["alligator", "bat", "cat"];
+  logger(animals);
+
+  // Object --- everything is an object
+  let car = {
+    make: "Honda",
+    model: "Odessy",
+    year: 2018,
+    isTankFull: false,
+    color: "silver",
+    // Method
+    honk: function () {
+      logger("honk");
+    }
+  };
+  logger(car);
+  car.honk();
 </script>
